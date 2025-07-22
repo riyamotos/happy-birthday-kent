@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envelope Surprise</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .envelope-screen img {
+    max-width: 400px; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .envelope-screen img:hover {
+    transform: scale(1.05); 
+  }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #e0caa1;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c0ae8b;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope-screen">
+    <img src="Kent (1).png" alt="Envelope Image">
+    <p>Oh look, an envelope! Do you want to open it? 𐔌՞. .՞𐦯 </p>
+    <div class="button-group">
+      <button onclick="location.href='letter.html'">Yes</button>
+      <button onclick="location.href='sigh.html'">No</button>
+    </div>
+  </div>
+</body>
+</html>
+

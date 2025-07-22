@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sigh Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .sigh-screen img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .sigh-screen h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #e0caa1;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #c0ae8b;
+    }
+    .floating-image {
+  position: fixed;
+  top: -100px;
+  width: 40px;
+  height: 40px;
+  animation: floatDown linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="sigh-screen">
+    <img src="angry.jpg" alt="Sigh Image"> 
+    <h2>NOOOO READ ITTT : ( </h2>
+    <button onclick="location.href='envelope.html'">Go Back</button>
+  </div>
+  <script>
+  function createFloatingImage(src) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "floating-image";
+
+    img.style.left = Math.random() * 100 + "vw";
+
+    img.style.top = -(Math.random() * 200 + 50) + "px";
+
+    img.style.animationDuration = (8 + Math.random() * 6) + "s";
+
+    document.body.appendChild(img);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const brokenHeartSrc = "lols.png"; 
+
+    for (let i = 0; i < 20; i++) {
+      createFloatingImage(brokenHeartSrc);
+    }
+  });
+</script>
+
+</body>
+</html>

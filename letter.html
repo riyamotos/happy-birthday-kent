@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kent</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
+      font-family: 'Corinthia', cursive;
+      font-size: 30px;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .letter-container {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      height: 80vh;
+      background-image: url('paperler.jpg'); 
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      overflow-y: scroll;
+      padding: 40px 20px;
+    }
+
+    .letter-text {
+      font-size: 0.7em;
+      font-weight: 100;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding-left: 10px;
+      font-family: 'Dawning of a New Day', cursive;
+ }
+
+      .floating-image {
+      position: fixed;
+      top: -100px;
+      width: 40px;
+      height: 40px;
+      animation: floatDown linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes floatDown {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="letter-container">
+    <div class="letter-text">
+     <p>My dearest Kent,</p>
+
+     <p>Happy 22nd birthday, my sweet boy!</p>
+
+     <p>I truly think there are no words good enough to express my gratitude and love towards you,  but this is me trying, lol. You are such a kind, loving, and gentle soul, and I feel incredibly lucky to be cared for and loved by you. Although we have not been together for very long, it feels like I have shared my entire lifetime with you, because I genuinely cannot imagine what my life would be like without you, and I never want to find out. In such a short time, you have become my rest, my happiness, my home, and my everything all at once. I  cannot wait to spend the rest of eternity with you, growing together, and loving each other more and more every single day. </p>
+
+     <p>You give so much of yourself to me, always finding time for me even with your busy schedule, and you constantly remind me how much I mean to you and how deeply loved I am. I want you to know that I deeply appreciate every sacrifice you make, and I assure you that all your efforts will never go unnoticed by me. I will always give you just as much love and effort as you give me, and I pinky promise to never stop reminding you how worthy you are and how endless my love is for you. </p>
+
+     <p>Even with the distance between us, know that I will always choose long distance with you over close distance with anyone else, because you make it all worth it. You make love feel like it can stretch across oceans and still stay warm, full, and true.</p>
+
+     <P>Once again, happy birthday, baby! I hope you have the best day ever and get everything you deserve and more. I love you so much, my Kent.</p>
+
+     <p>With all my love, </p>
+
+     <p>Juliana 𖹭 </p>
+
+    </div>
+  </div>
+
+  <audio id="birthdayAudio" src="keshi - UNDERSTAND (Visualizer).mp3" autoplay></audio>
+
+ <script>
+  function createFloatingImage(src) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "floating-image";
+
+    const side = Math.random() < 0.5 ? "left" : "right";
+    const leftPos = side === "left"
+      ? Math.random() * 30           
+      : 70 + Math.random() * 30;    
+
+    img.style.left = leftPos + "vw";
+    img.style.top = -(Math.random() * 200 + 50) + "px";
+    img.style.animationDuration = (8 + Math.random() * 6) + "s";
+
+    document.body.appendChild(img);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const heartSrc = "heart.png";
+    const roseSrc = "rose.png";
+
+    for (let i = 0; i < 20; i++) {
+      createFloatingImage(heartSrc);
+      createFloatingImage(roseSrc);
+    }
+
+    const audio = document.getElementById("birthdayAudio");
+    audio.volume = 0;
+    let fadeInterval = setInterval(() => {
+      if (audio.volume < 0.1) {
+        audio.volume = Math.min(audio.volume + 0.01, 0.1);
+      } else {
+        clearInterval(fadeInterval);
+      }
+    }, 100);
+  });
+</script>
+</body>
+</html>
